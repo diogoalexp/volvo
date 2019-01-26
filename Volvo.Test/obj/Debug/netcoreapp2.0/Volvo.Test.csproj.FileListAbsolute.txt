@@ -11,13 +11,13 @@ C:\workspace\volvo\Volvo.Test\obj\Debug\netcoreapp2.0\Volvo.Test.AssemblyInfoInp
 C:\workspace\volvo\Volvo.Test\obj\Debug\netcoreapp2.0\Volvo.Test.AssemblyInfo.cs
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.Test.pdb
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.DAL.dll
-C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.dll
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.Domain.dll
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.Web.dll
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.DAL.pdb
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.Domain.pdb
 C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.Web.pdb
-C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.pdb
 C:\workspace\volvo\Volvo.Test\obj\Debug\netcoreapp2.0\Volvo.Test.csproj.CopyComplete
 C:\workspace\volvo\Volvo.Test\obj\Debug\netcoreapp2.0\Volvo.Test.dll
 C:\workspace\volvo\Volvo.Test\obj\Debug\netcoreapp2.0\Volvo.Test.pdb
+C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.API.dll
+C:\workspace\volvo\Volvo.Test\bin\Debug\netcoreapp2.0\Volvo.API.pdb

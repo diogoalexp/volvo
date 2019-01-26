@@ -14,10 +14,12 @@ namespace Volvo.Web.Controllers
     public class TruckController : Controller
     {
         private ITruckDAL _truckDAL;
+        private IModelDAL _modelDAL;
 
-        public TruckController(ITruckDAL truckDAL)
+        public TruckController(ITruckDAL truckDAL, IModelDAL modelDAL)
         {
             this._truckDAL = truckDAL;
+            this._modelDAL = modelDAL;
 
         }
 
@@ -28,7 +30,15 @@ namespace Volvo.Web.Controllers
             {
                 ViewData["Message"] = "Trucks";
 
-                var viewModel = _truckDAL.getAll();
+                var viewModel = new List<TruckViewModel>();
+                var models = _modelDAL.getAll();
+                
+                foreach (var item in _truckDAL.getAll())
+                {                    
+                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
+                }
+
+                
 
                 return View(viewModel);
             }
@@ -65,7 +75,13 @@ namespace Volvo.Web.Controllers
 
                 _truckDAL.add(truck);
 
-                var viewModel = _truckDAL.getAll();
+                var viewModel = new List<TruckViewModel>();
+                var models = _modelDAL.getAll();
+
+                foreach (var item in _truckDAL.getAll())
+                {
+                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
+                }
                 return View("Index", viewModel);
             }
             catch (Exception)
@@ -81,8 +97,8 @@ namespace Volvo.Web.Controllers
             try { 
                 ViewData["Message"] = "Edit a Truck.";
 
-                var viewModel = _truckDAL.get(id); ;
-
+                var viewModel = _truckDAL.get(id);                
+                
                 return View(viewModel);
             }
             catch (Exception)
@@ -100,7 +116,13 @@ namespace Volvo.Web.Controllers
 
                 _truckDAL.update(truck);
 
-                var viewModel = _truckDAL.getAll();
+                var viewModel = new List<TruckViewModel>();
+                var models = _modelDAL.getAll();
+
+                foreach (var item in _truckDAL.getAll())
+                {
+                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
+                }
                 return View("Index", viewModel);
             }
             catch (Exception) {
@@ -109,7 +131,7 @@ namespace Volvo.Web.Controllers
         }
 
         [Route("Truck/Delete")]
-        public IActionResult Delete(int id)
+        public IActionResult Remove(int id)
         {
             try { 
                 ViewData["Message"] = "The truck was deleted.";
@@ -119,8 +141,14 @@ namespace Volvo.Web.Controllers
                     ViewData["Message"] = "The truck was deleted.";
                 else
                     ViewData["Message"] = "The truck was not deleted.";
-            
-                var viewModel = _truckDAL.getAll();
+
+                var viewModel = new List<TruckViewModel>();
+                var models = _modelDAL.getAll();
+
+                foreach (var item in _truckDAL.getAll())
+                {
+                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
+                }
                 return View("Index", viewModel);
             }
             catch (Exception)

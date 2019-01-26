@@ -107,7 +107,7 @@ namespace Volvo.Web.Controllers
         }
 
         [Route("Model/Delete")]
-        public IActionResult Delete(int id)
+        public IActionResult Remove(int id)
         {
             try
             {

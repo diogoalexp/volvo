@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Volvo.Domain.Truck>
+﻿@model IEnumerable<TruckViewModel>
 
 @{
     ViewData["Title"] = "Truck";
@@ -13,19 +13,19 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Id)
+                    @Html.DisplayNameFor(model => model.truck.Id)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Name)
+                    @Html.DisplayNameFor(model => model.truck.Name)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Value)
+                    @Html.DisplayNameFor(model => model.truck.Value)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Date)
+                    @Html.DisplayNameFor(model => model.truck.Date)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Model_id)
+                    @Html.DisplayNameFor(model => model.model.Name)
                 </th>
             <th></th>
         </tr>
@@ -34,24 +34,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.truck.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.truck.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Value)
+                @Html.DisplayFor(modelItem => item.truck.Value)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.truck.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Model_id)
+                @Html.DisplayFor(modelItem => item.model.Name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) |
+                @Html.ActionLink("Edit", "Edit", new {  id=item.truck.Id }) |
                 @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                @Html.ActionLink("Remove", "Remove", new { id=item.truck.Id })
             </td>
         </tr>
 }
