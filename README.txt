@@ -1,15 +1,14 @@
-<h1>Diogo Alexandro Pereira</h1>
-<a href="https://sites.google.com/view/diogoalexp/" rel="stylesheet" />ApresentaÁ„o</a>
-<br /><br />
-<b>Executar o script DEPLOY.SQL</b><br />
-<b>Volvo.Web È o projeto principal e deve ficar como StartUP</b><br />
-<b>O sistema possui uma API:</b><br />
-../api/Truck/<br />
-../api/Model/<br />
-<br />
+Diogo Alexandro Pereira
+https://sites.google.com/view/diogoalexp/
+
+Executar o script DEPLOY.SQL
+Volvo.Web √© o projeto principal e deve ficar como StartUP
+O sistema possui uma API:
+../api/Truck/
+../api/Model/
 
 
-No momento de adicionar um novo caminh„o, ficou faltando adicionar um combobox para escolher o modelo.
-Ficou fraco de CSS, pois de fato n„o gastei esforÁo algum aplicando layout.
+No momento de adicionar um novo caminh√£o, ficou faltando adicionar um combobox para escolher o modelo.
+Ficou fraco de CSS, pois de fato n√£o gastei esfor√ßo algum aplicando layout.
 
 Att.
