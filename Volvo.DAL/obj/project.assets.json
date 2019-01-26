@@ -3531,8 +3531,8 @@
     },
     "Volvo.Domain/1.0.0": {
       "type": "project",
-      "path": "../../Volvo.Domain/Volvo.Domain.csproj",
-      "msbuildProject": "../../Volvo.Domain/Volvo.Domain.csproj"
+      "path": "../Volvo.Domain/Volvo.Domain.csproj",
+      "msbuildProject": "../Volvo.Domain/Volvo.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3574,8 +3574,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\workspace\\Volvo.Domain\\Volvo.Domain.csproj": {
-              "projectPath": "C:\\workspace\\Volvo.Domain\\Volvo.Domain.csproj"
+            "C:\\workspace\\volvo\\Volvo.Domain\\Volvo.Domain.csproj": {
+              "projectPath": "C:\\workspace\\volvo\\Volvo.Domain\\Volvo.Domain.csproj"
             }
           }
         }

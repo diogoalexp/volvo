@@ -1,0 +1,9 @@
+C:\workspace\volvo\Volvo.Domain\bin\Debug\netcoreapp2.0\Volvo.Domain.deps.json
+C:\workspace\volvo\Volvo.Domain\bin\Debug\netcoreapp2.0\Volvo.Domain.dll
+C:\workspace\volvo\Volvo.Domain\bin\Debug\netcoreapp2.0\Volvo.Domain.pdb
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.csprojResolveAssemblyReference.cache
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.csproj.CoreCompileInputs.cache
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.AssemblyInfoInputs.cache
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.AssemblyInfo.cs
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.dll
+C:\workspace\volvo\Volvo.Domain\obj\Debug\netcoreapp2.0\Volvo.Domain.pdb

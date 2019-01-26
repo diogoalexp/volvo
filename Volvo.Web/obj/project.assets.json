@@ -13296,8 +13296,8 @@
     },
     "Volvo.Domain/1.0.0": {
       "type": "project",
-      "path": "../../Volvo.Domain/Volvo.Domain.csproj",
-      "msbuildProject": "../../Volvo.Domain/Volvo.Domain.csproj"
+      "path": "../Volvo.Domain/Volvo.Domain.csproj",
+      "msbuildProject": "../Volvo.Domain/Volvo.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

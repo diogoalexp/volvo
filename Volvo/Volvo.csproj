@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Volvo.Domain\Volvo.Domain.csproj" />
     <ProjectReference Include="..\Volvo.DAL\Volvo.DAL.csproj" />
+    <ProjectReference Include="..\Volvo.Domain\Volvo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

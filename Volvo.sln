@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo", "Volvo\Volvo.csproj", "{B58721D4-AB76-40C7-8D51-EF6622239EC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo", "Volvo\Volvo.csproj", "{B58721D4-AB76-40C7-8D51-EF6622239EC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Domain", "..\Volvo.Domain\Volvo.Domain.csproj", "{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.DAL", "Volvo.DAL\Volvo.DAL.csproj", "{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.DAL", "Volvo.DAL\Volvo.DAL.csproj", "{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.Web", "Volvo.Web\Volvo.Web.csproj", "{B89F1D9B-828D-4BE4-9879-AF4CFCBEB55B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Web", "Volvo.Web\Volvo.Web.csproj", "{B89F1D9B-828D-4BE4-9879-AF4CFCBEB55B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Test", "Volvo.Test\Volvo.Test.csproj", "{20C923AC-A6B0-48F5-9ABF-4F6EEAC8DA14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Domain", "Volvo.Domain\Volvo.Domain.csproj", "{10585C08-F18C-4A27-96E1-BC01C1655209}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +23,6 @@ Global
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{B89F1D9B-828D-4BE4-9879-AF4CFCBEB55B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89F1D9B-828D-4BE4-9879-AF4CFCBEB55B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89F1D9B-828D-4BE4-9879-AF4CFCBEB55B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C923AC-A6B0-48F5-9ABF-4F6EEAC8DA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C923AC-A6B0-48F5-9ABF-4F6EEAC8DA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C923AC-A6B0-48F5-9ABF-4F6EEAC8DA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C923AC-A6B0-48F5-9ABF-4F6EEAC8DA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10585C08-F18C-4A27-96E1-BC01C1655209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10585C08-F18C-4A27-96E1-BC01C1655209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10585C08-F18C-4A27-96E1-BC01C1655209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10585C08-F18C-4A27-96E1-BC01C1655209}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
