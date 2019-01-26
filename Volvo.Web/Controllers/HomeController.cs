@@ -4,12 +4,26 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Volvo.DAL;
+using Volvo.DAL.Interface;
+using Volvo.Domain;
 using Volvo.Web.Models;
 
 namespace Volvo.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private TruckContext _truckContext;
+        private ModelContext _modelContext;
+
+
+        public HomeController(TruckContext truckContext, ModelContext modelContext)
+        {
+            this._truckContext = truckContext;
+            this._modelContext = modelContext;
+
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -19,7 +33,10 @@ namespace Volvo.Web.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            var viewModel =  t.getAll();
+
+            return View(viewModel);            
         }
 
         public IActionResult Contact()

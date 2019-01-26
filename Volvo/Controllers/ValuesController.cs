@@ -13,17 +13,20 @@ namespace Volvo.Controllers
     public class ValuesController : Controller
     {
         private TruckContext _truckContext;
+        private ModelContext _modelContext;
 
-        public ValuesController(TruckContext truckContext)
+
+        public ValuesController(TruckContext truckContext, ModelContext modelContext)
         {
             this._truckContext = truckContext;
+            this._modelContext = modelContext;
 
         }
         // GET api/values
         [HttpGet]
         public List<Truck> Get()
         {
-            ITruckDAL t = new TruckDAL(_truckContext);            
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);            
             return t.getAll();
         }
 
@@ -31,7 +34,7 @@ namespace Volvo.Controllers
         [HttpGet("{id}")]
         public Truck Get(int id)
         {
-            ITruckDAL t = new TruckDAL(_truckContext);
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
             return t.get(id);
         }
 
@@ -39,7 +42,7 @@ namespace Volvo.Controllers
         [HttpPost]
         public Truck Post([FromBody]Truck value)
         {
-            ITruckDAL t = new TruckDAL(_truckContext);
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
             return t.add(value);
         }
 
@@ -47,7 +50,7 @@ namespace Volvo.Controllers
         [HttpPut("{id}")]
         public Truck Put(int id, [FromBody]string value)
         {
-            ITruckDAL t = new TruckDAL(_truckContext);
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
             return t.update(new Truck());
         }
 
@@ -55,8 +58,8 @@ namespace Volvo.Controllers
         [HttpDelete("{id}")]
         public bool Delete(int id)
         {
-            ITruckDAL t = new TruckDAL(_truckContext);
-            return t.delete(new Truck());
+            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            return t.delete(id);
         }
     }
 }

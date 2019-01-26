@@ -9,3 +9,10 @@ C:\workspace\volvo\Volvo.Web\obj\Debug\netcoreapp2.0\Volvo.Web.AssemblyInfoInput
 C:\workspace\volvo\Volvo.Web\obj\Debug\netcoreapp2.0\Volvo.Web.AssemblyInfo.cs
 C:\workspace\volvo\Volvo.Web\obj\Debug\netcoreapp2.0\Volvo.Web.dll
 C:\workspace\volvo\Volvo.Web\obj\Debug\netcoreapp2.0\Volvo.Web.pdb
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.DAL.dll
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.dll
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.Domain.dll
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.pdb
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.DAL.pdb
+C:\workspace\volvo\Volvo.Web\bin\Debug\netcoreapp2.0\Volvo.Domain.pdb
+C:\workspace\volvo\Volvo.Web\obj\Debug\netcoreapp2.0\Volvo.Web.csproj.CopyComplete

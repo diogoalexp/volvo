@@ -4,8 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Volvo.DAL;
 
 namespace Volvo.Web
 {
@@ -22,10 +25,29 @@ namespace Volvo.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                //options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            //services.AddMvc();//.SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            var connection = @"Server=(localdb)\MSSqlLocalDB;Database=volvo;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<TruckContext>
+                (options => options.UseSqlServer(connection));
+            services.AddDbContext<ModelContext>
+                (options => options.UseSqlServer(connection));
+
+            // BloggingContext requires
+            // using EFGetStarted.AspNetCore.NewDb.Models;
+            // UseSqlServer requires
+            // using Microsoft.EntityFrameworkCore;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, TruckContext truckContext, ModelContext modelContext)
         {
             if (env.IsDevelopment())
             {
@@ -45,6 +67,9 @@ namespace Volvo.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            
+            truckContext.Database.EnsureCreated();
+            modelContext.Database.EnsureCreated();
         }
     }
 }

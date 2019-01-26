@@ -6,12 +6,12 @@ using Volvo.Domain;
 
 namespace Volvo.DAL.Interface
 {
-    public interface ITruckDAL
+    public interface IModelDAL
     {
-        Truck get(int id);
-        List<Truck> getAll();
-        Truck add(Truck truck);
+        Model get(int id);
+        List<Model> getAll();
+        Model add(Model model);
         bool delete(int id);
-        Truck update(Truck truck);
+        Model update(Model model);
     }
 }

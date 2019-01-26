@@ -7,27 +7,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Volvo.Controllers
 {
-    public class TruckController : Controller
+    public class TrucksController : Controller
     {
-        // GET: Truck
+        // GET: Trucks
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Truck/Details/5
+        // GET: Trucks/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Truck/Create
+        // GET: Trucks/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Truck/Create
+        // POST: Trucks/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -44,13 +44,13 @@ namespace Volvo.Controllers
             }
         }
 
-        // GET: Truck/Edit/5
+        // GET: Trucks/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Truck/Edit/5
+        // POST: Trucks/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -67,13 +67,13 @@ namespace Volvo.Controllers
             }
         }
 
-        // GET: Truck/Delete/5
+        // GET: Trucks/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Truck/Delete/5
+        // POST: Trucks/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

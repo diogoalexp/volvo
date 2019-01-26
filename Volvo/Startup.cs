@@ -39,6 +39,8 @@ namespace Volvo
             var connection = @"Server=(localdb)\MSSqlLocalDB;Database=volvo;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<TruckContext>
                 (options => options.UseSqlServer(connection));
+            services.AddDbContext<ModelContext>
+                (options => options.UseSqlServer(connection));
             // BloggingContext requires
             // using EFGetStarted.AspNetCore.NewDb.Models;
             // UseSqlServer requires
@@ -46,7 +48,7 @@ namespace Volvo
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, TruckContext truckContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, TruckContext truckContext, ModelContext modelContext)
         {
             if (env.IsDevelopment())
             {
@@ -55,6 +57,7 @@ namespace Volvo
 
             app.UseMvc();
             truckContext.Database.EnsureCreated();
+            modelContext.Database.EnsureCreated();
         }
     }
 }

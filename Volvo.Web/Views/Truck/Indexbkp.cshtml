@@ -7,11 +7,9 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
 
 <fieldset>
-    <legend>Pesquisa de Fluxo</legend>
-    <h4>Pesquisar Fluxo</h4>
+    <legend>Pesquisa de Caminhões</legend>    
 
     @using (Html.BeginForm("Index", "Formulario", FormMethod.Get))
     {
@@ -31,17 +29,17 @@
                 @Html.EditorFor(model => model.cod_fluxo, new { placeholder = "" })
             </div>
 
-        </div>
+        </div>*@
 
         <div class="row">
             <br />
-            <div class="col-lg-3">
+            @*<div class="col-lg-3">
                 <button type="submit" class="btn btn-sm btn-primary">Pesquisar</button>
-            </div>
+            </div>*@
             <div class="col-lg-3">
-                <button type="button" class="btn btn-sm btn-secondary" onclick="@("window.location.href='" + @Url.Action("Cadastrar", "Formulario") + "'");">Incluir</button>
+                <button type="button" class="btn btn-sm btn-secondary" onclick="@("window.location.href='" + @Url.Action("Create", "Truck") + "'");">Adicionar novo Caminhão</button>
             </div>
-        </div>*@
+        </div>
     }
     @if (Model != null)
     {
@@ -67,8 +65,8 @@
                     <td>@*@item.nome*@</td>
                     <td>@item.Value</td>
                     <td>@item.Date</td>
-                    <td>@Html.ActionLink("Editar", "Editar", new { truck = item })</td>
-                    <td>@Html.ActionLink("Deletar", "Deletar", new { id = item.Id })</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+                    <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id })</td>
                 </tr>
                 }
             </tbody>
