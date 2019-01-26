@@ -2,6 +2,17 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "EntityFramework/6.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -4746,10 +4757,61 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "Volvo.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Volvo.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Volvo.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Volvo.DAL.dll": {}
+        }
+      },
+      "Volvo.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Volvo.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Volvo.Domain.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "EntityFramework/6.2.0": {
+      "sha512": "ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "type": "package",
+      "path": "entityframework/6.2.0",
+      "files": [
+        "content/net40/App.config.transform",
+        "content/net40/Web.config.transform",
+        "entityframework.6.2.0.nupkg.sha512",
+        "entityframework.nuspec",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -12527,12 +12589,24 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "Volvo.DAL/1.0.0": {
+      "type": "project",
+      "path": "../Volvo.DAL/Volvo.DAL.csproj",
+      "msbuildProject": "../Volvo.DAL/Volvo.DAL.csproj"
+    },
+    "Volvo.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Volvo.Domain/Volvo.Domain.csproj",
+      "msbuildProject": "../../Volvo.Domain/Volvo.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.6",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Volvo.DAL >= 1.0.0",
+      "Volvo.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12564,7 +12638,14 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\workspace\\Volvo.Domain\\Volvo.Domain.csproj": {
+              "projectPath": "C:\\workspace\\Volvo.Domain\\Volvo.Domain.csproj"
+            },
+            "C:\\workspace\\volvo\\Volvo.DAL\\Volvo.DAL.csproj": {
+              "projectPath": "C:\\workspace\\volvo\\Volvo.DAL\\Volvo.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -12593,5 +12674,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'EntityFramework 6.2.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    }
+  ]
 }

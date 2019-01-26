@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Volvo.DAL;
+using Volvo.DAL.Interface;
+using Volvo.Domain;
 
 namespace Volvo.Controllers
 {
@@ -11,34 +14,42 @@ namespace Volvo.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Truck> Get()
         {
-            return new string[] { "value1", "value2" };
+            ITruckDAL t = new TruckDAL();
+            return t.getAll();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Truck Get(int id)
         {
-            return "value";
+            ITruckDAL t = new TruckDAL();
+            return t.get(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Truck Post([FromBody]string value)
         {
+            ITruckDAL t = new TruckDAL();
+            return t.add( new Truck());
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public Truck Put(int id, [FromBody]string value)
         {
+            ITruckDAL t = new TruckDAL();
+            return t.update(new Truck());
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
+            ITruckDAL t = new TruckDAL();
+            return t.delete(new Truck());
         }
     }
 }

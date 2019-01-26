@@ -1,0 +1,16 @@
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.deps.json
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.runtimeconfig.json
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.runtimeconfig.dev.json
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.dll
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.pdb
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.csprojResolveAssemblyReference.cache
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.csproj.CoreCompileInputs.cache
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.AssemblyInfoInputs.cache
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.AssemblyInfo.cs
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.dll
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.pdb
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.DAL.dll
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.Domain.dll
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.Domain.pdb
+C:\workspace\volvo\Volvo\bin\Debug\netcoreapp2.0\Volvo.DAL.pdb
+C:\workspace\volvo\Volvo\obj\Debug\netcoreapp2.0\Volvo.csproj.CopyComplete

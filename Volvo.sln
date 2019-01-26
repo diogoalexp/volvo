@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo", "Volvo\Volvo.csproj", "{B58721D4-AB76-40C7-8D51-EF6622239EC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.Domain", "..\Volvo.Domain\Volvo.Domain.csproj", "{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Volvo.DAL", "Volvo.DAL\Volvo.DAL.csproj", "{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B58721D4-AB76-40C7-8D51-EF6622239EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871A9D00-36B3-4E1B-A6FB-CDABBE4EB0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
