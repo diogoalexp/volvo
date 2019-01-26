@@ -1,99 +1,134 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Volvo.DAL;
 using Volvo.DAL.Interface;
 using Volvo.Domain;
+using Volvo.Web.Models;
 
 namespace Volvo.Web.Controllers
 {
     public class TruckController : Controller
     {
-        private TruckContext _truckContext;
-        private ModelContext _modelContext;
+        private ITruckDAL _truckDAL;
 
-        public TruckController(TruckContext truckContext, ModelContext modelContext)
+        public TruckController(ITruckDAL truckDAL)
         {
-            this._truckContext = truckContext;
-            this._modelContext = modelContext;
+            this._truckDAL = truckDAL;
 
         }
 
         [Route("Truck/Index")]
         public IActionResult Index()
         {
-            ViewData["Message"] = "Trucks";
+            try
+            {
+                ViewData["Message"] = "Trucks";
 
-            ITruckDAL t = new TruckDAL(_truckContext);
-            var viewModel = t.getAll();
+                var viewModel = _truckDAL.getAll();
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Truck/Create")]
         public IActionResult Create()
         {
-            ViewData["Message"] = "Add a new Truck.";
+            try
+            {
+                ViewData["Message"] = "Add a new Truck.";
 
-            var viewModel = new Truck() { Date = DateTime.Now};
+                var viewModel = new Truck() { Date = DateTime.Now };
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Truck/SaveCreate")]
         public IActionResult SaveCreate(Truck truck)
         {
-            ViewData["Message"] = "The Truck was added.";
-            ITruckDAL t = new TruckDAL(_truckContext);
+            try
+            {
+                ViewData["Message"] = "The Truck was added.";
 
 
-            t.add(truck);
+                _truckDAL.add(truck);
 
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
+                var viewModel = _truckDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
+
         }
 
         [Route("Truck/Edit")]
         public IActionResult Edit(int id)
         {
-            ViewData["Message"] = "Edit a Truck.";
-            ITruckDAL t = new TruckDAL(_truckContext);
-           
+            try { 
+                ViewData["Message"] = "Edit a Truck.";
 
-            var viewModel = t.get(id); ;
+                var viewModel = _truckDAL.get(id); ;
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Truck/SaveEdit")]
         public IActionResult SaveEdit(Truck truck)
         {
-            ViewData["Message"] = "The Truck was edit.";
-            ITruckDAL t = new TruckDAL(_truckContext);
+            try
+            {
+                ViewData["Message"] = "The Truck was edit.";
 
+                _truckDAL.update(truck);
 
-            t.update(truck);
-
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
+                var viewModel = _truckDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception) {
+                return View("Error");
+            }
         }
 
         [Route("Truck/Delete")]
         public IActionResult Delete(int id)
         {
-            ViewData["Message"] = "The truck was deleted.";
-
-            ITruckDAL t = new TruckDAL(_truckContext);
-            
-            if (t.delete(id))
+            try { 
                 ViewData["Message"] = "The truck was deleted.";
-            else
-                ViewData["Message"] = "The truck was not deleted.";
+                        
             
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
+                if (_truckDAL.delete(id))
+                    ViewData["Message"] = "The truck was deleted.";
+                else
+                    ViewData["Message"] = "The truck was not deleted.";
+            
+                var viewModel = _truckDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
+
+
     }
 }

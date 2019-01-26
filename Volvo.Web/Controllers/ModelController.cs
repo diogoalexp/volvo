@@ -11,86 +11,120 @@ namespace Volvo.Web.Controllers
 {
     public class ModelController : Controller
     {        
-        private ModelContext _modelContext;
+        private IModelDAL _modelDAL;
 
-        public ModelController(ModelContext modelContext)
+        public ModelController(IModelDAL modelDAL)
         {
-            this._modelContext = modelContext;
+            this._modelDAL = modelDAL;
         }
 
         [Route("Model/Index")]
         public IActionResult Index()
         {
-            ViewData["Message"] = "Models";
+            try
+            {
+                ViewData["Message"] = "Models";
 
-            IModelDAL t = new ModelDAL(_modelContext);
-            var viewModel = t.getAll();
+                var viewModel = _modelDAL.getAll();
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Model/Create")]
         public IActionResult Create()
         {
-            ViewData["Message"] = "Add a new Model.";
+            try
+            {
+                ViewData["Message"] = "Add a new Model.";
 
-            var viewModel = new Model();
+                var viewModel = new Model();
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Model/SaveCreate")]
         public IActionResult SaveCreate(Model model)
         {
-            ViewData["Message"] = "The Model was added.";
-            IModelDAL t = new ModelDAL(_modelContext);
+            try
+            {
+                ViewData["Message"] = "The Model was added.";
 
+                _modelDAL.add(model);
 
-            t.add(model);
+                var viewModel = _modelDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
 
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
         }
 
         [Route("Model/Edit")]
         public IActionResult Edit(int id)
         {
-            ViewData["Message"] = "Edit a Model.";
-            IModelDAL t = new ModelDAL(_modelContext);
+            try
+            {
+                ViewData["Message"] = "Edit a Model.";
 
+                var viewModel = _modelDAL.get(id); ;
 
-            var viewModel = t.get(id); ;
-
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Model/SaveEdit")]
         public IActionResult SaveEdit(Model model)
         {
-            ViewData["Message"] = "The Model was edit.";
-            IModelDAL t = new ModelDAL(_modelContext);
+            try
+            {
+                ViewData["Message"] = "The Model was edit.";
 
+                _modelDAL.update(model);
 
-            t.update(model);
-
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
+                var viewModel = _modelDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
 
         [Route("Model/Delete")]
         public IActionResult Delete(int id)
         {
-            ViewData["Message"] = "The model was deleted.";
-
-            IModelDAL t = new ModelDAL(_modelContext);
-
-            if (t.delete(id))
+            try
+            {
                 ViewData["Message"] = "The model was deleted.";
-            else
-                ViewData["Message"] = "The model was not deleted.";
 
-            var viewModel = t.getAll();
-            return View("Index", viewModel);
+                if (_modelDAL.delete(id))
+                    ViewData["Message"] = "The model was deleted.";
+                else
+                    ViewData["Message"] = "The model was not deleted.";
+
+                var viewModel = _modelDAL.getAll();
+                return View("Index", viewModel);
+            }
+            catch (Exception)
+            {
+                return View("Error");
+            }
         }
     }
 }

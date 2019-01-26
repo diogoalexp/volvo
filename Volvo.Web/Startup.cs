@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Volvo.DAL;
+using Volvo.DAL.Interface;
 
 namespace Volvo.Web
 {
@@ -39,6 +40,8 @@ namespace Volvo.Web
                 (options => options.UseSqlServer(connection));
             services.AddDbContext<ModelContext>
                 (options => options.UseSqlServer(connection));
+            services.AddScoped<ITruckDAL, TruckDAL>();
+            services.AddScoped<IModelDAL, ModelDAL>();
 
             // BloggingContext requires
             // using EFGetStarted.AspNetCore.NewDb.Models;

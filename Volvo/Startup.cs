@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Volvo.DAL;
+using Volvo.DAL.Interface;
 
 namespace Volvo
 {
@@ -41,6 +42,8 @@ namespace Volvo
                 (options => options.UseSqlServer(connection));
             services.AddDbContext<ModelContext>
                 (options => options.UseSqlServer(connection));
+            services.AddScoped<ITruckDAL, TruckDAL>();
+            services.AddScoped<IModelDAL, ModelDAL>();
             // BloggingContext requires
             // using EFGetStarted.AspNetCore.NewDb.Models;
             // UseSqlServer requires

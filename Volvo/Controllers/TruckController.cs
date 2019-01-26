@@ -10,56 +10,49 @@ using Volvo.Domain;
 namespace Volvo.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class TruckController : Controller
     {
-        private TruckContext _truckContext;
-        private ModelContext _modelContext;
+        private ITruckDAL _truckDAL;        
 
 
-        public ValuesController(TruckContext truckContext, ModelContext modelContext)
+        public TruckController(ITruckDAL truckDAL)
         {
-            this._truckContext = truckContext;
-            this._modelContext = modelContext;
+            this._truckDAL = truckDAL;
 
         }
         // GET api/values
         [HttpGet]
         public List<Truck> Get()
-        {
-            ITruckDAL t = new TruckDAL(_truckContext);            
-            return t.getAll();
+        {                 
+            return _truckDAL.getAll();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public Truck Get(int id)
-        {
-            ITruckDAL t = new TruckDAL(_truckContext);
-            return t.get(id);
+        {            
+            return _truckDAL.get(id);
         }
 
         // POST api/values
         [HttpPost]
         public Truck Post([FromBody]Truck value)
-        {
-            ITruckDAL t = new TruckDAL(_truckContext);
-            return t.add(value);
+        {            
+            return _truckDAL.add(value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public Truck Put(int id, [FromBody]string value)
-        {
-            ITruckDAL t = new TruckDAL(_truckContext);
-            return t.update(new Truck());
+        {            
+            return _truckDAL.update(new Truck());
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public bool Delete(int id)
         {
-            ITruckDAL t = new TruckDAL(_truckContext);
-            return t.delete(id);
+            return _truckDAL.delete(id);
         }
     }
 }

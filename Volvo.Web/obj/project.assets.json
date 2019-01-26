@@ -5056,7 +5056,7 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "Volvo/1.0.0": {
+      "Volvo.API/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -5068,10 +5068,10 @@
           "Volvo.Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Volvo.dll": {}
+          "bin/placeholder/Volvo.API.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Volvo.dll": {}
+          "bin/placeholder/Volvo.API.dll": {}
         }
       },
       "Volvo.DAL/1.0.0": {
@@ -13284,10 +13284,10 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "Volvo/1.0.0": {
+    "Volvo.API/1.0.0": {
       "type": "project",
-      "path": "../Volvo/Volvo.csproj",
-      "msbuildProject": "../Volvo/Volvo.csproj"
+      "path": "../Volvo/Volvo.API.csproj",
+      "msbuildProject": "../Volvo/Volvo.API.csproj"
     },
     "Volvo.DAL/1.0.0": {
       "type": "project",
@@ -13305,7 +13305,7 @@
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
-      "Volvo >= 1.0.0"
+      "Volvo.API >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13338,8 +13338,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\workspace\\volvo\\Volvo\\Volvo.csproj": {
-              "projectPath": "C:\\workspace\\volvo\\Volvo\\Volvo.csproj"
+            "C:\\workspace\\volvo\\Volvo\\Volvo.API.csproj": {
+              "projectPath": "C:\\workspace\\volvo\\Volvo\\Volvo.API.csproj"
             }
           }
         }

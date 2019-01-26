@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Volvo\Volvo.csproj" />
+    <ProjectReference Include="..\Volvo\Volvo.API.csproj" />
   </ItemGroup>
 
 </Project>

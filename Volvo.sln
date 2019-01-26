@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo", "Volvo\Volvo.csproj", "{B58721D4-AB76-40C7-8D51-EF6622239EC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.API", "Volvo\Volvo.API.csproj", "{B58721D4-AB76-40C7-8D51-EF6622239EC0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Volvo.DAL", "Volvo.DAL\Volvo.DAL.csproj", "{5E373EAC-28F2-45EF-9B71-EF4B8CC706A9}"
 EndProject

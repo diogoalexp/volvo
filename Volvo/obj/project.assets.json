@@ -13294,9 +13294,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\volvo\\Volvo\\Volvo.csproj",
-      "projectName": "Volvo",
-      "projectPath": "C:\\workspace\\volvo\\Volvo\\Volvo.csproj",
+      "projectUniqueName": "C:\\workspace\\volvo\\Volvo\\Volvo.API.csproj",
+      "projectName": "Volvo.API",
+      "projectPath": "C:\\workspace\\volvo\\Volvo\\Volvo.API.csproj",
       "packagesPath": "C:\\Users\\diogo\\.nuget\\packages\\",
       "outputPath": "C:\\workspace\\volvo\\Volvo\\obj\\",
       "projectStyle": "PackageReference",

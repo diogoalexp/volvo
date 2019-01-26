@@ -10,6 +10,14 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="NSubstitute" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Volvo.DAL\Volvo.DAL.csproj" />
+    <ProjectReference Include="..\Volvo.Domain\Volvo.Domain.csproj" />
+    <ProjectReference Include="..\Volvo.Web\Volvo.Web.csproj" />
+    <ProjectReference Include="..\Volvo\Volvo.API.csproj" />
   </ItemGroup>
 
 </Project>
