@@ -19,12 +19,10 @@ namespace Volvo.DAL
     public class TruckDAL : ITruckDAL
     {
         private TruckContext _truckContext;
-        private ModelContext _modelContext;
 
-        public TruckDAL (TruckContext truckContext, ModelContext modelContext)
+        public TruckDAL (TruckContext truckContext)
         {
             this._truckContext = truckContext;
-            this._modelContext = modelContext;
         }
 
         public Truck get(int id) {

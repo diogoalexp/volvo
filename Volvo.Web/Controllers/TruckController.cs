@@ -26,7 +26,7 @@ namespace Volvo.Web.Controllers
         {
             ViewData["Message"] = "Trucks";
 
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            ITruckDAL t = new TruckDAL(_truckContext);
             var viewModel = t.getAll();
 
             return View(viewModel);
@@ -46,7 +46,7 @@ namespace Volvo.Web.Controllers
         public IActionResult SaveCreate(Truck truck)
         {
             ViewData["Message"] = "The Truck was added.";
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            ITruckDAL t = new TruckDAL(_truckContext);
 
 
             t.add(truck);
@@ -59,7 +59,7 @@ namespace Volvo.Web.Controllers
         public IActionResult Edit(int id)
         {
             ViewData["Message"] = "Edit a Truck.";
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            ITruckDAL t = new TruckDAL(_truckContext);
            
 
             var viewModel = t.get(id); ;
@@ -71,7 +71,7 @@ namespace Volvo.Web.Controllers
         public IActionResult SaveEdit(Truck truck)
         {
             ViewData["Message"] = "The Truck was edit.";
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            ITruckDAL t = new TruckDAL(_truckContext);
 
 
             t.update(truck);
@@ -85,7 +85,7 @@ namespace Volvo.Web.Controllers
         {
             ViewData["Message"] = "The truck was deleted.";
 
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
+            ITruckDAL t = new TruckDAL(_truckContext);
             
             if (t.delete(id))
                 ViewData["Message"] = "The truck was deleted.";

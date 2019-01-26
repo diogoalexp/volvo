@@ -29,22 +29,6 @@ namespace Volvo.Web.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            ITruckDAL t = new TruckDAL(_truckContext, _modelContext);
-            var viewModel =  t.getAll();
-
-            return View(viewModel);            
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
 
         public IActionResult Error()
         {
