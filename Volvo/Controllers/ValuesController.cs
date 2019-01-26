@@ -12,11 +12,18 @@ namespace Volvo.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private TruckContext _truckContext;
+
+        public ValuesController(TruckContext truckContext)
+        {
+            this._truckContext = truckContext;
+
+        }
         // GET api/values
         [HttpGet]
         public List<Truck> Get()
         {
-            ITruckDAL t = new TruckDAL();
+            ITruckDAL t = new TruckDAL(_truckContext);            
             return t.getAll();
         }
 
@@ -24,23 +31,23 @@ namespace Volvo.Controllers
         [HttpGet("{id}")]
         public Truck Get(int id)
         {
-            ITruckDAL t = new TruckDAL();
+            ITruckDAL t = new TruckDAL(_truckContext);
             return t.get(id);
         }
 
         // POST api/values
         [HttpPost]
-        public Truck Post([FromBody]string value)
+        public Truck Post([FromBody]Truck value)
         {
-            ITruckDAL t = new TruckDAL();
-            return t.add( new Truck());
+            ITruckDAL t = new TruckDAL(_truckContext);
+            return t.add(value);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public Truck Put(int id, [FromBody]string value)
         {
-            ITruckDAL t = new TruckDAL();
+            ITruckDAL t = new TruckDAL(_truckContext);
             return t.update(new Truck());
         }
 
@@ -48,7 +55,7 @@ namespace Volvo.Controllers
         [HttpDelete("{id}")]
         public bool Delete(int id)
         {
-            ITruckDAL t = new TruckDAL();
+            ITruckDAL t = new TruckDAL(_truckContext);
             return t.delete(new Truck());
         }
     }
