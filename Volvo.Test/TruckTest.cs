@@ -151,7 +151,7 @@ namespace Volvo.Test
 
             var target = new TruckController(mock, mock2);
 
-            var result = target.Delete(0) as ViewResult;
+            var result = target.Remove(0) as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
             Assert.AreSame(((List<TruckViewModel>)result.Model)[0].truck.Name, "Sample");
