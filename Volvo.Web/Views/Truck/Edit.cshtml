@@ -1,4 +1,4 @@
-﻿@model Volvo.Domain.Truck
+﻿@model TruckViewModel
 
 @{
     ViewData["Title"] = "View";
@@ -13,29 +13,31 @@
         <form asp-action="SaveEdit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" readonly="readonly" />
-                <span asp-validation-for="Id" class="text-danger"></span>
+                <label asp-for="truck.Id" class="control-label"></label>
+                <input asp-for="truck.Id" class="form-control" readonly="readonly" />
+                <span asp-validation-for="truck.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="truck.Name" class="control-label"></label>
+                <input asp-for="truck.Name" class="form-control" />
+                <span asp-validation-for="truck.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Value" class="control-label"></label>
-                <input asp-for="Value" class="form-control" />
-                <span asp-validation-for="Value" class="text-danger"></span>
+                <label asp-for="truck.Value" class="control-label"></label>
+                <input asp-for="truck.Value" class="form-control" />
+                <span asp-validation-for="truck.Value" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
+                <label asp-for="truck.Date" class="control-label"></label>
+                <input asp-for="truck.Date" class="form-control" />
+                <span asp-validation-for="truck.Date" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden="hidden">
-                <label asp-for="Model_id" class="control-label"></label>
-                <input asp-for="Model_id" class="form-control" hidden="hidden" />
-                <span asp-validation-for="Model_id" class="text-danger" ></span>
+            <div class="form-group">
+                <label asp-for="truck.Model.Id" class="control-label">Model</label>
+                <select asp-for="truck.Model.Id" asp-items="@(new SelectList(Model.modelos,"Id","Name"))" class="form-control">
+                    @*<option>Please select one</option>*@
+                </select>
+                <span asp-validation-for="truck.Model.Id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

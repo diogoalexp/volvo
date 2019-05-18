@@ -30,19 +30,11 @@ namespace Volvo.Web.Controllers
             {
                 ViewData["Message"] = "Trucks";
 
-                var viewModel = new List<TruckViewModel>();
-                var models = _modelDAL.getAll();
-                
-                foreach (var item in _truckDAL.getAll())
-                {                    
-                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
-                }
-
-                
+                var viewModel = _truckDAL.getAll() ?? new List<Truck>();
 
                 return View(viewModel);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return View("Error");
             }
@@ -55,7 +47,10 @@ namespace Volvo.Web.Controllers
             {
                 ViewData["Message"] = "Add a new Truck.";
 
-                var viewModel = new Truck() { Date = DateTime.Now };
+                var viewModel = new TruckViewModel(
+                    new Truck() { Date = DateTime.Now },
+                    _modelDAL.getAll() ?? new List<Model>()
+                );
 
                 return View(viewModel);
             }
@@ -72,19 +67,13 @@ namespace Volvo.Web.Controllers
             {
                 ViewData["Message"] = "The Truck was added.";
 
-
                 _truckDAL.add(truck);
 
-                var viewModel = new List<TruckViewModel>();
-                var models = _modelDAL.getAll();
+                var viewModel = _truckDAL.getAll() ?? new List<Truck>();
 
-                foreach (var item in _truckDAL.getAll())
-                {
-                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
-                }
                 return View("Index", viewModel);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return View("Error");
             }
@@ -94,10 +83,14 @@ namespace Volvo.Web.Controllers
         [Route("Truck/Edit")]
         public IActionResult Edit(int id)
         {
-            try { 
+            try
+            { 
                 ViewData["Message"] = "Edit a Truck.";
 
-                var viewModel = _truckDAL.get(id);                
+                var viewModel = new TruckViewModel(
+                    _truckDAL.get(id),
+                    _modelDAL.getAll() ?? new List<Model>()
+                );
                 
                 return View(viewModel);
             }
@@ -116,16 +109,11 @@ namespace Volvo.Web.Controllers
 
                 _truckDAL.update(truck);
 
-                var viewModel = new List<TruckViewModel>();
-                var models = _modelDAL.getAll();
+                var viewModel = _truckDAL.getAll() ?? new List<Truck>();
 
-                foreach (var item in _truckDAL.getAll())
-                {
-                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
-                }
                 return View("Index", viewModel);
             }
-            catch (Exception) {
+            catch (Exception e) {
                 return View("Error");
             }
         }
@@ -133,22 +121,15 @@ namespace Volvo.Web.Controllers
         [Route("Truck/Delete")]
         public IActionResult Remove(int id)
         {
-            try { 
-                ViewData["Message"] = "The truck was deleted.";
-                        
-            
+            try
+            { 
                 if (_truckDAL.delete(id))
                     ViewData["Message"] = "The truck was deleted.";
                 else
                     ViewData["Message"] = "The truck was not deleted.";
 
-                var viewModel = new List<TruckViewModel>();
-                var models = _modelDAL.getAll();
+                var viewModel = _truckDAL.getAll() ?? new List<Truck>();
 
-                foreach (var item in _truckDAL.getAll())
-                {
-                    viewModel.Add(new TruckViewModel(item, models.FirstOrDefault(x => x.Id == item.Model_id)));
-                }
                 return View("Index", viewModel);
             }
             catch (Exception)

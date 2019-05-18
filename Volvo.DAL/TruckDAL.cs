@@ -26,23 +26,25 @@ namespace Volvo.DAL
         }
 
         public Truck get(int id) {
-            Truck truck = _truckContext.Truck.FindAsync(id).GetAwaiter().GetResult();
+            Truck truck = _truckContext.Truck.Include("Model").FirstOrDefaultAsync( x => x.Id == id).GetAwaiter().GetResult();
             
             return truck;
         }
 
         public List<Truck> getAll()
         {
-            List<Truck> list =  _truckContext.Truck.ToListAsync().GetAwaiter().GetResult();
+            List<Truck> list = _truckContext.Truck.Include("Model").ToListAsync().GetAwaiter().GetResult();
 
             return list;
         }
 
         public Truck add(Truck truck)
         {
-            Truck t = _truckContext.Truck.Add(truck).Entity;
+            _truckContext.Truck.Add(truck);
+            _truckContext.Entry(truck.Model).State = EntityState.Unchanged;
             _truckContext.SaveChanges();
-            return t;
+            _truckContext.Entry(truck.Model).Reload();
+            return null;
         }
 
         public bool delete(int id)
@@ -65,8 +67,10 @@ namespace Volvo.DAL
             t.Name = truck.Name;
             t.Value = truck.Value;
             t.Date = truck.Date;
-            t.Model_id = truck.Model_id;
+            t.Model = truck.Model;
+            _truckContext.Entry(truck.Model).State = EntityState.Unchanged;
             _truckContext.SaveChanges();
+            _truckContext.Entry(truck.Model).Reload();
             return truck;
         }
 

@@ -17,7 +17,9 @@ CREATE Table [dbo].[model] (
 ');
 GO
 
-insert model values ('Cegonha');
+insert model values ('FH');
+insert model values ('FM');
+GO
 
 IF OBJECT_ID('[dbo].[truck]', 'U') IS NULL
 EXEC('

@@ -10,11 +10,18 @@ namespace Volvo.Web.Models
     {
         public Truck truck;
         public Model model;
+        public IEnumerable<Model> modelos;
 
         public TruckViewModel (Truck truck, Model model)
         {
             this.truck = truck;
             this.model = model;
-        } 
+        }
+
+        public TruckViewModel(Truck truck, IEnumerable<Model> modelos)
+        {
+            this.truck = truck;
+            this.modelos = modelos;
+        }
     }
 }

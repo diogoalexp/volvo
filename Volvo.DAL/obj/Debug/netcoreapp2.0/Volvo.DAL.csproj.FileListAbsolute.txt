@@ -5,7 +5,7 @@ C:\workspace\volvo\Volvo.DAL\bin\Debug\netcoreapp2.0\Volvo.DAL.dll
 C:\workspace\volvo\Volvo.DAL\bin\Debug\netcoreapp2.0\Volvo.DAL.pdb
 C:\workspace\volvo\Volvo.DAL\bin\Debug\netcoreapp2.0\Volvo.Domain.dll
 C:\workspace\volvo\Volvo.DAL\bin\Debug\netcoreapp2.0\Volvo.Domain.pdb
-C:\workspace\volvo\Volvo.DAL\obj\Debug\netcoreapp2.0\Volvo.DAL.csprojResolveAssemblyReference.cache
+C:\workspace\volvo\Volvo.DAL\obj\Debug\netcoreapp2.0\Volvo.DAL.csprojAssemblyReference.cache
 C:\workspace\volvo\Volvo.DAL\obj\Debug\netcoreapp2.0\Volvo.DAL.csproj.CoreCompileInputs.cache
 C:\workspace\volvo\Volvo.DAL\obj\Debug\netcoreapp2.0\Volvo.DAL.AssemblyInfoInputs.cache
 C:\workspace\volvo\Volvo.DAL\obj\Debug\netcoreapp2.0\Volvo.DAL.AssemblyInfo.cs
