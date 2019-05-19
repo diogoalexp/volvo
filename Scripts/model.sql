@@ -13,3 +13,7 @@ CREATE Table [dbo].[model] (
 ) ON [PRIMARY]
 ');
 GO
+
+insert model select top 1 'FH' where not exists(select * from model where name = 'FH');
+insert model select top 1 'FM' where not exists(select * from model where name = 'FM');
+GO

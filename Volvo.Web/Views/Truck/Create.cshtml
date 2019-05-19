@@ -14,10 +14,10 @@
         <form asp-action="SaveCreate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>*@
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
                 <label asp-for="truck.Name" class="control-label"></label>
                 <input asp-for="truck.Name" class="form-control" />
@@ -32,6 +32,13 @@
                 <label asp-for="truck.Date" class="control-label"></label>
                 <input asp-for="truck.Date" class="form-control" />
                 <span asp-validation-for="truck.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="truck.YearModel" class="control-label"></label>
+                <select asp-for="truck.YearModel" asp-items="@(new SelectList(Model.Year))" class="form-control">
+                    @*<option>Please select one</option>*@
+                </select>
+                <span asp-validation-for="truck.YearModel" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="truck.Model.Id" class="control-label">Model</label>

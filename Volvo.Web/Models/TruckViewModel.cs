@@ -11,6 +11,7 @@ namespace Volvo.Web.Models
         public Truck truck;
         public Model model;
         public IEnumerable<Model> modelos;
+        public int[] Year = new int[] { DateTime.Now.Year, DateTime.Now.AddYears(1).Year };
 
         public TruckViewModel (Truck truck, Model model)
         {

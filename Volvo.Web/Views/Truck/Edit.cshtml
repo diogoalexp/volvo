@@ -24,13 +24,20 @@
             </div>
             <div class="form-group">
                 <label asp-for="truck.Value" class="control-label"></label>
-                <input asp-for="truck.Value" class="form-control" />
-                <span asp-validation-for="truck.Value" class="text-danger"></span>
+                <input asp-for="truck.Value" pattern='^\d+(?:\.\d{0,2})$' class="form-control" />
+                <span asp-validation-for="truck.Value" pattern='^\d+(?:\.\d{0,2})$' class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="truck.Date" class="control-label"></label>
                 <input asp-for="truck.Date" class="form-control" />
                 <span asp-validation-for="truck.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="truck.YearModel" class="control-label"></label>
+                <select asp-for="truck.YearModel" asp-items="@(new SelectList(Model.Year))" class="form-control">
+                    @*<option>Please select one</option>*@
+                </select>
+                <span asp-validation-for="truck.YearModel" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="truck.Model.Id" class="control-label">Model</label>

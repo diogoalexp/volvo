@@ -17,11 +17,11 @@ namespace Volvo.Test
         [TestCategory("Truck")]
         public void Index()
         {
-
             var mock = Substitute.For<ITruckDAL>();
-            var mock2 = Substitute.For<IModelDAL>();  
-            Truck sample = new Truck() { Id = 0, Name = "Sample", Model_id = 1 };
+            var mock2 = Substitute.For<IModelDAL>();
+
             Model sample2 = new Model() { Id = 1, Name = "Sample Type" };
+            Truck sample = new Truck() { Id = 0, Name = "Sample", Model = sample2 };            
 
             mock.getAll().Returns((new List<Truck>(){
                 sample
@@ -36,15 +36,14 @@ namespace Volvo.Test
             var result = target.Index() as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
-            Assert.AreSame(((List < TruckViewModel >)result.Model)[0].truck.Name, "Sample");
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].model.Name, "Sample Type");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Name, "Sample");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Model.Name, "Sample Type");
         }
 
         [TestMethod]
         [TestCategory("Truck")]
         public void Create()
         {
-
             var mock = Substitute.For<ITruckDAL>();
             var mock2 = Substitute.For<IModelDAL>();
 
@@ -59,11 +58,11 @@ namespace Volvo.Test
         [TestCategory("Truck")]
         public void SaveCreate()
         {
-
             var mock = Substitute.For<ITruckDAL>();
             var mock2 = Substitute.For<IModelDAL>();
-            Truck sample = new Truck() { Id = 0, Name = "Sample", Model_id = 1 };
             Model sample2 = new Model() { Id = 1, Name = "Sample Type" };
+            Truck sample = new Truck() { Id = 0, Name = "Sample", Model = sample2 };
+            
 
             mock.add(sample).Returns(sample);
             mock.getAll().Returns((new List<Truck>(){
@@ -79,15 +78,14 @@ namespace Volvo.Test
             var result = target.SaveCreate(sample) as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].truck.Name, "Sample");
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].model.Name, "Sample Type");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Name, "Sample");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Model.Name, "Sample Type");
         }
 
         [TestMethod]
         [TestCategory("Truck")]
         public void Edit()
         {
-
             var mock = Substitute.For<ITruckDAL>();
             var mock2 = Substitute.For<IModelDAL>();
             Truck sample = new Truck() { Id = 0, Name = "Sample" };
@@ -99,7 +97,7 @@ namespace Volvo.Test
             var result = target.Edit(0) as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
-            Assert.AreSame(((Truck)result.Model).Name, "Sample");
+            Assert.AreSame(((TruckViewModel)result.Model).truck.Name, "Sample");
         }
 
         [TestMethod]
@@ -109,8 +107,9 @@ namespace Volvo.Test
 
             var mock = Substitute.For<ITruckDAL>();
             var mock2 = Substitute.For<IModelDAL>();
-            Truck sample = new Truck() { Id = 0, Name = "Sample", Model_id = 1 };
             Model sample2 = new Model() { Id = 1, Name = "Sample Type" };
+            Truck sample = new Truck() { Id = 0, Name = "Sample", Model = sample2 };
+            
 
             mock.update(sample).Returns(sample);
             mock.getAll().Returns((new List<Truck>(){
@@ -126,8 +125,8 @@ namespace Volvo.Test
             var result = target.SaveEdit(sample) as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].truck.Name, "Sample");
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].model.Name, "Sample Type");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Name, "Sample");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Model.Name, "Sample Type");
         }
 
         [TestMethod]
@@ -137,8 +136,9 @@ namespace Volvo.Test
 
             var mock = Substitute.For<ITruckDAL>();
             var mock2 = Substitute.For<IModelDAL>();
-            Truck sample = new Truck() { Id = 0, Name = "Sample", Model_id = 1 };
             Model sample2 = new Model() { Id = 1, Name = "Sample Type" };
+            Truck sample = new Truck() { Id = 0, Name = "Sample", Model = sample2 };
+            
 
             mock.delete(0).Returns(true);
             mock.getAll().Returns((new List<Truck>(){
@@ -154,8 +154,8 @@ namespace Volvo.Test
             var result = target.Remove(0) as ViewResult;
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Model);
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].truck.Name, "Sample");
-            Assert.AreSame(((List<TruckViewModel>)result.Model)[0].model.Name, "Sample Type");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Name, "Sample");
+            Assert.AreSame(((List<Truck>)result.Model)[0].Model.Name, "Sample Type");
         }
     }
 }

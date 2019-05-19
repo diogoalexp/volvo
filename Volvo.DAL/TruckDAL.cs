@@ -67,6 +67,7 @@ namespace Volvo.DAL
             t.Name = truck.Name;
             t.Value = truck.Value;
             t.Date = truck.Date;
+            t.YearModel = truck.YearModel;
             t.Model = truck.Model;
             _truckContext.Entry(truck.Model).State = EntityState.Unchanged;
             _truckContext.SaveChanges();

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +49,12 @@ namespace Volvo.Web
             // using EFGetStarted.AspNetCore.NewDb.Models;
             // UseSqlServer requires
             // using Microsoft.EntityFrameworkCore;
+            var currentCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            currentCulture.NumberFormat.NumberDecimalSeparator = ".";
+            currentCulture.NumberFormat.NumberGroupSeparator = " ";
+            currentCulture.NumberFormat.CurrencyDecimalSeparator = ".";
+
+            Thread.CurrentThread.CurrentCulture = currentCulture;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
